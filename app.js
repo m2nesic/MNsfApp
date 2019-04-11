@@ -1,4 +1,4 @@
-var HTTP_PORT = process.env.PORT || 8080;
+var HTTP_PORT = process.env.PORT || 5000;
 var express = require("express");
 var app = express();
 
@@ -8,7 +8,9 @@ app.get("/", (req, res) => {
 });
 
 // setup http server to listen on HTTP_PORT
-app.listen(HTTP_PORT);
+app.listen(HTTP_PORT, function(){
+  console.log("app listening on: " + HTTP_PORT)
+});
 /*var express = require('express');
 var nforce = require('nforce');
 var hbs = require('hbs');
