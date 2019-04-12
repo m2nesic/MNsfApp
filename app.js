@@ -35,7 +35,7 @@ app.get('/', function(req, res) {
       // authenticated
       org.authenticate(req.query, function(err) {
         if (!err) {
-          org.query({ query: 'SELECT id, name, type, industry, rating FROM Account' }, function(err, results) {
+          org.query({ query: 'SELECT Name, Genre__c, Game_Studio__r.Name , Release_Date__c,TextPicture__c FROM Game__c ORDER BY Release_Date__c ASC' }, function(err, results) {
             if (!err) {
               res.render('index', {records: results.records});
             }
