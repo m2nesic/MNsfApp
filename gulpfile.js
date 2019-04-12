@@ -39,7 +39,6 @@ gulp.task('server', function() {
 gulp.task('atom', function(cb) {
   var atomPaths = require('gulp-atom-downloader');
   var proc = require('child_process');
-  var path = require('path');
 
   atomPaths().then(function(atomPaths) {
     // quietly install heroku-tools
